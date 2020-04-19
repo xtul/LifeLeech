@@ -1,0 +1,32 @@
+﻿<Config>
+	<!--  formula is ((athletics + medicine) / 2) * Multipler
+				it's very likely rounded to non-decimal numbers, not confirmed
+				if you think formula is unfair, could be better or is otherwise 
+				absolutely bollocks, just let me know
+				default: 0.06, minimum 0.01                                       -->
+	<Multipler>0.06</Multipler>
+	
+	<!--  true: currently mounted agents are not awarded hit points
+				false: currently mounted agents are awarded hit points
+				default: true. fuck cavalry                                       -->
+	<ExcludeCavalry>true</ExcludeCavalry> 
+	
+	<!--  true: hit points are awarded only for player character
+				false: hit points are awarded for everyone, including enemies
+				default: false                                                    -->
+	<PlayerOnly>false</PlayerOnly>
+	
+	<!--  true: hit points are awarded when agent kills somebody
+				false: hit points are awarded when agent hits somebody
+				default: true                                                     -->
+	<KillBased>true</KillBased>
+
+	<!--  true: hit points will not exceed max agent hit points
+				false: hit points will exceed max agent hit points (berserker mode?)
+				default: true                                                     -->
+	<LimitedByMaxHealth>true</LimitedByMaxHealth>
+	
+	<!--  toggles debug data in messagebox
+				default: false                                                     -->
+	<DebugOutput>true</DebugOutput>
+</Config>
