@@ -42,12 +42,16 @@ namespace LifeLeech {
 
 		public override void OnAgentHit(Agent affectedAgent, Agent affectorAgent, int damage, int weaponKind, int currentWeaponUsageIndex) {
 			if (config.ExcludeCavalry && affectorAgent.HasMount) {
+				if (config.DebugOutput)
+					InformationManager.DisplayMessage(new InformationMessage($"{affectorAgent.Name} is mounted - no healing."));
 				return;
 			}
 			if (config.PlayerOnly && !affectorAgent.IsPlayerControlled) {
+				if (config.DebugOutput)
+					InformationManager.DisplayMessage(new InformationMessage($"{affectorAgent.Name} isn't a player."));
 				return;
 			}
-			if (config.KillBased) { // return if should heal on hit
+			if (config.KillBased) {
 				return;
 			}
 			HealUnit(affectorAgent);
@@ -56,19 +60,21 @@ namespace LifeLeech {
 
 		public override void OnAgentRemoved(Agent affectedAgent, Agent affectorAgent, AgentState agentState, KillingBlow blow) {
 			if (!blow.IsValid) {
-				InformationManager.DisplayMessage(new InformationMessage($"Invalid blow."));
+				if (config.DebugOutput)
+					InformationManager.DisplayMessage(new InformationMessage($"Invalid blow."));
 				return;
 			}
 			if (config.ExcludeCavalry && affectorAgent.HasMount) {
-				InformationManager.DisplayMessage(new InformationMessage($"{affectorAgent.Name} is mounted - no healing."));
+				if (config.DebugOutput)
+					InformationManager.DisplayMessage(new InformationMessage($"{affectorAgent.Name} is mounted - no healing."));
 				return;
 			}
 			if (config.PlayerOnly && !affectorAgent.IsPlayerControlled) {
-				InformationManager.DisplayMessage(new InformationMessage($"{affectorAgent.Name} isn't a player."));
+				if (config.DebugOutput)
+					InformationManager.DisplayMessage(new InformationMessage($"{affectorAgent.Name} isn't a player."));
 				return;
 			}
-			if (!config.KillBased) { // return if should heal on hit
-				InformationManager.DisplayMessage(new InformationMessage($"We were supposed to heal on hit..."));
+			if (!config.KillBased) { 
 				return;
 			}
 			HealUnit(affectorAgent);
@@ -90,7 +96,10 @@ namespace LifeLeech {
 			}
 
 			if (config.DebugOutput) {
-				InformationManager.DisplayMessage(new InformationMessage($"{agent.Name} was granted {result:N1} hit points @ {config.Multipler:N2} multipler."));
+				InformationManager.DisplayMessage(new InformationMessage($"{agent.Name} was granted {result:N1} hit points." +
+				$" - Athletics: {athletics}" +
+				$" - Medicine: {medicine}" +
+				$" - Multipler: {config.Multipler:N2}"));
 			}
 			return;
 		}
