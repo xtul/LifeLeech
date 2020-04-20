@@ -1,11 +1,18 @@
 ﻿<Config>
+  <!--  if enabled, skills won't be evaluated. everybody will be healed
+				with set amount of health
+				default: 1.5, minimum 0.1. anything less will be equal to 0				-->
+  <StaticHealing enabled="false">1.5</StaticHealing>
+  
 	<!--  formula is ((athletics + medicine) / 2) * Multipler
-				it's very likely rounded to non-decimal numbers, not confirmed
-				if you think formula is unfair, could be better or is otherwise 
-				absolutely bollocks, just let me know
+				result is rounded to single precision floating point (ie. 0.5 vs 0.47)
 				default: 0.06, minimum 0.01                                       -->
-	<Multipler>0.06</Multipler>
+	<MultiplerHealing enabled="true">0.06</MultiplerHealing>
 	
+  <!-- 
+				If you enable both, they will stack
+																																					-->
+  
 	<!--  true: currently mounted agents are not awarded hit points
 				false: currently mounted agents are awarded hit points
 				default: true. fuck cavalry                                       -->
@@ -27,6 +34,6 @@
 	<LimitedByMaxHealth>true</LimitedByMaxHealth>
 	
 	<!--  toggles debug data in messagebox
-				default: false                                                     -->
+				default: false                                                    -->
 	<DebugOutput>true</DebugOutput>
 </Config>

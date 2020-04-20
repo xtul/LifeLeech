@@ -252,6 +252,8 @@
     <!-- TODO: Don't think this can be made optional -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="LeechBehavior.cs" />
     <Compile Include="LifeLeechSubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="config.xml">
