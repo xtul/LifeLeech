@@ -26,7 +26,7 @@
 	<!--  true: hit points are awarded when agent kills somebody
 				false: hit points are awarded when agent hits somebody
 				default: true                                                     -->
-	<KillBased>true</KillBased>
+	<KillBased>false</KillBased>
 
 	<!--  true: hit points will not exceed max agent hit points
 				false: hit points will exceed max agent hit points (berserker mode?)

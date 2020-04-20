@@ -36,6 +36,6 @@ namespace LifeLeech {
 		[XmlAttribute(AttributeName = "enabled")]
 		public bool Enabled { get; set; }
 		[XmlText]
-		public double Value { get; set; }
+		public decimal Value { get; set; }
 	}
 }

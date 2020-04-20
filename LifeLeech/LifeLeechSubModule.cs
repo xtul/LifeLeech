@@ -27,6 +27,7 @@ namespace LifeLeech {
 				$"\nkillBased = {config.KillBased}" +
 				$"\nexcludeCavalry = {config.ExcludeCavalry}"));
 			}
+
 			mission.AddMissionBehaviour(new LeechBehavior(config));
 			base.OnMissionBehaviourInitialize(mission);
 		}

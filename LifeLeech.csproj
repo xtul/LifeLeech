@@ -252,9 +252,10 @@
     <!-- TODO: Don't think this can be made optional -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config.cs" />
-    <Compile Include="LeechBehavior.cs" />
-    <Compile Include="LifeLeechSubModule.cs" />
+    <Compile Include="LifeLeech\Config.cs" />
+    <Compile Include="LifeLeech\Healing.cs" />
+    <Compile Include="LifeLeech\LeechBehavior.cs" />
+    <Compile Include="LifeLeech\LifeLeechSubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="config.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
