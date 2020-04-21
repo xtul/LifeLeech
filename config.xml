@@ -26,14 +26,19 @@
 	<!--  true: hit points are awarded when agent kills somebody
 				false: hit points are awarded when agent hits somebody
 				default: true                                                     -->
-	<KillBased>false</KillBased>
+	<KillBased>true</KillBased>
 
 	<!--  true: hit points will not exceed max agent hit points
 				false: hit points will exceed max agent hit points (berserker mode?)
 				default: true                                                     -->
 	<LimitedByMaxHealth>true</LimitedByMaxHealth>
+
+  <!--  true: hit points will only be granted to named characters
+				false: hit points will be granted to all characters
+				default: true                                                     -->
+  <OnlyNamedCharacters>true</OnlyNamedCharacters>
 	
 	<!--  toggles debug data in messagebox
 				default: false                                                    -->
-	<DebugOutput>true</DebugOutput>
+	<DebugOutput>false</DebugOutput>
 </Config>

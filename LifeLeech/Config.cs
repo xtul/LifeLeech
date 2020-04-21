@@ -17,6 +17,8 @@ namespace LifeLeech {
 		public bool KillBased { get; set; }
 		[XmlElement(ElementName = "LimitedByMaxHealth")]
 		public bool LimitedByMaxHealth { get; set; }
+		[XmlElement(ElementName = "OnlyNamedCharacters")]
+		public bool OnlyNamedCharacters { get; set; }
 		[XmlElement(ElementName = "DebugOutput")]
 		public bool DebugOutput { get; set; }
 	}

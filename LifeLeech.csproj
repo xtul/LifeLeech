@@ -254,6 +254,7 @@
   <ItemGroup>
     <Compile Include="LifeLeech\Config.cs" />
     <Compile Include="LifeLeech\Healing.cs" />
+    <Compile Include="LifeLeech\Helpers.cs" />
     <Compile Include="LifeLeech\LeechBehavior.cs" />
     <Compile Include="LifeLeech\LifeLeechSubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
