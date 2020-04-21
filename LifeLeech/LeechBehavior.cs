@@ -42,7 +42,7 @@ namespace LifeLeech {
 				}
 
 				DoHealing(affectorAgent);
-			} catch (Exception ex) { Say($"{ex.Message}") };
+			} catch (Exception ex) { Say($"{ex.Message}"); };
 		}
 
 		/// <summary>
@@ -74,7 +74,7 @@ namespace LifeLeech {
 				}
 
 				DoHealing(affectorAgent);
-			} catch (Exception ex) { Say($"{ex.Message}") };
+			} catch (Exception ex) { Say($"{ex.Message}"); };
 		}
 	}
 }
