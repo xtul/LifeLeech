@@ -20,16 +20,16 @@ namespace LifeLeech {
 				if (config.KillBased) {
 					return;
 				}
+				if (affectorAgent.Character == null || affectedAgent.Character == null) {
+					Say($"{affectorAgent.Name} isn't a character/is a mount.");
+					return;
+				}
 				if (damage == 0) {
 					Say($"{affectorAgent.Name} dealt no damage.");
 					return;
 				}
 				if (config.OnlyNamedCharacters && !affectorAgent.IsHero) {
 					Say($"{affectorAgent.Name} isn't a hero.");
-					return;
-				}
-				if (affectorAgent.Character == null) {
-					Say($"{affectorAgent.Name} isn't a character/is a mount.");
 					return;
 				}
 				if (config.ExcludeCavalry && affectorAgent.HasMount) {
@@ -42,7 +42,7 @@ namespace LifeLeech {
 				}
 
 				DoHealing(affectorAgent);
-			} catch (Exception ex) { Say($"{ex.Message}"); };
+			} catch (Exception ex) { Say($"{ex.Message}"); return; };
 		}
 
 		/// <summary>
@@ -74,7 +74,7 @@ namespace LifeLeech {
 				}
 
 				DoHealing(affectorAgent);
-			} catch (Exception ex) { Say($"{ex.Message}"); };
+			} catch (Exception ex) { Say($"{ex.Message}"); return; };
 		}
 	}
 }
