@@ -15,7 +15,11 @@ namespace LifeLeech {
 		/// <param name="text">Text to display.</param>
 		void Say(string text) {
 			if (config.DebugOutput)
-				InformationManager.DisplayMessage(new InformationMessage(text, new Color(134, 114, 250)));
+				InformationManager.DisplayMessage(new InformationMessage(text, new Color(0.5f, 0.5f, 0.5f)));
+		}
+
+		void SayGreen(string text) {
+			InformationManager.DisplayMessage(new InformationMessage(text, new Color(0, 1, 0)));
 		}
 	}
 }

@@ -14,6 +14,7 @@ namespace LifeLeech {
 		/// </summary>
 		/// <param name="agent">Target agent</param>
 		public void DoHealing(Agent agent) {
+			
 			if (config.MultiplerHealing.Enabled) {
 				HealUsingMultipler(agent);
 			}
@@ -36,10 +37,12 @@ namespace LifeLeech {
 				result = 0.1f;
 			}
 
-			agent.Health += (float)result;
+			agent.Health += result;
 			if (agent.Health > maxHealth && config.LimitedByMaxHealth) {
 				agent.Health = maxHealth;
 			}
+
+			if (agent == Agent.Main) SayGreen($"You leeched {result} health.");
 
 			Say($"{agent.Name} was granted {result:N1} formula-based hit points.\n" +
 			$" - Athletics: {athletics}\n" +
@@ -60,6 +63,8 @@ namespace LifeLeech {
 			if (config.LimitedByMaxHealth && agent.Health > maxHealth) {
 				agent.Health = maxHealth;
 			}
+
+			if (agent == Agent.Main) SayGreen($"You leeched {result} health.");
 
 			Say($"{agent.Name} was granted {result:N1} static hit points.");
 			return;

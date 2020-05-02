@@ -1,7 +1,7 @@
 ﻿<Module>
   <Name value="Life Leech"/>
   <Id value="LifeLeech"/>
-  <Version value="v1.0.0"/>
+  <Version value="v1.0.6"/>
   <SingleplayerModule value="true"/>
   <MultiplayerModule value="false"/>
   <DependedModules>
